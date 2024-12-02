@@ -1,7 +1,241 @@
+@font-face {
+    font-display: swap; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v29-latin-regular.woff2') format('woff2'); 
+  }
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/montserrat-v29-latin-500.woff2') format('woff2'); 
+  }
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/montserrat-v29-latin-600.woff2') format('woff2'); 
+  }
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v29-latin-700.woff2') format('woff2'); 
+  }
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/montserrat-v29-latin-900.woff2') format('woff2'); 
+  }
+
+  :root {
+    /* font-size*/
+    --font-size-main: 16px;          
+    --font-size-heading-large: 116px; 
+    --font-size-heading-large-second: 106px; 
+    --font-size-heading-medium: 70px;    
+    --font-size-description-small: 24px;     
+    --font-size-subheading: 21px;     
+    --font-size-body-large: 42px;        
+    --font-size-body-small: 20px; 
+
+    /* font-weight*/
+
+    --font-weight-regular: 400;   
+    --font-weight-medium: 500;    
+    --font-weight-semibold: 600;  
+    --font-weight-bold: 700;      
+    --font-weight-black: 900; 
+
+    /* line-height*/
+
+    --line-height-default: 140%;   
+    --line-height-tight: 90%;     
+    --line-height-normal: 120%;   
+    --line-height-relaxed: 130%; 
+
+    /* Colors*/
+    
+    --color-accent-text: #FFE251;                 /* Accent text color */
+    --color-main-text: #FFFFFF;                  /* Main text color */
+    --color-accent-title: #FFD000;               /* Accent title color */
+    --color-accent-bg: #E50103;                  /* Accent background color */
+    --color-accent-advantages: #F03131;          /* Accent color for "advantages" section */
+    --color-main-bg: linear-gradient(90deg, #001024 0%, #002555 50%, #001024 100%); /* Main background gradient */
+    --color-bg-elements-hover: #ffffff33; /* Input background hover effect */
+    --color-bg-elements: #ffffff1a;    /* Background color for elements */
+  }
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: default;
+    color: var(--color-main-text);
 }
 
 body {
-    background: linear-gradient(90deg, #001024 0%, #002555 50%, #001024 100%);
+    background: var(--color-main-bg);
+    margin: 0;
+    color: var(--color-main-text);
+    font-family: Montserrat, sans-serif;
+    font-size: var(--font-size-main);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-default);
 }
+
+.section {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+/* -- Header --*/
+
+.header-section {
+    padding: 50px 8px 45px 8px;
+    border: 1px solid white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-list {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation-link:hover {
+    color: var(--color-accent-text);
+}
+
+/* -- Hero --*/
+
+.hero-section {
+    padding: 45px 8px 85px 8px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(/images/hero-image.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    border: 1px solid white;
+}
+
+.hero-title {
+    font-size: var(--font-size-heading-large);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-tight);
+    width: 431px;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    width: 426px;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-description-small);
+    line-height: var(--line-height-normal);
+    background-color: var(--color-accent-bg);
+    text-align: center;
+    padding: 10px 28px 14px;
+    border-radius: 8px;
+    margin-bottom: 38px;
+}
+
+.hero-courses {
+    width: 579px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 27px;
+}
+
+.courses-item {
+    border-radius: 9px;
+    background-color: var(--color-bg-elements);
+}
+
+.courses-item:hover {
+    border-radius: 9px;
+    background-color: var(--color-bg-elements-hover);
+}
+
+.courses-item.is-hidden {
+    visibility: hidden;
+}
+
+.courses-item.fronend,
+.courses-item.python,
+.courses-item.qa,
+.courses-item.full-stack,
+.courses-item.c-sharp,
+.courses-item.java {
+    background-repeat: no-repeat;
+    background-position: 9px 7px;
+}
+
+.courses-item.fronend {
+    background-image: url(/images/icons/hero-icon-frontend.svg);
+    background-size: 27px;
+}
+
+.courses-item.python{
+    background-image: url(/images/icons/hero-icon-python.svg);
+    background-size: 26px;
+}
+
+.courses-item.qa{
+    background-image: url(/images/icons/hero-icon-qa.svg);
+    background-size: 23px;
+}
+
+.courses-item.full-stack{
+    background-image: url(/images/icons/hero-icon-fullstack.svg);
+    background-size: 24px 27px;
+}
+
+.courses-item.c-sharp {
+    background-image: url(/images/icons/hero-icon-c.svg);
+    background-size: 24px 27px;
+}
+
+.courses-item.java {
+    background-image: url(/images/icons/hero-icon-java.svg);
+    background-size: 23px 31px;
+    background-position: 9px 4px;
+}
+
+.courses-link {
+    display: block;
+    font-size: var(--font-size-subheading);
+    font-weight: var(--font-weight-medium);
+    padding: 8px 0 9px 45px;
+    width: 175px;
+}
+
+/* -- Advantages --*/
+
+/* -- Specializations --*/
+
+/* -- Feedback --*/
+
+/* -- Footer --*/
