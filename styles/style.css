@@ -3,7 +3,8 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/montserrat-v29-latin-regular.woff2') format('woff2'); 
+    src: url('../fonts/montserrat-v29-latin-regular.woff2') format('woff2'), 
+         url('../fonts/montserrat-v29-latin-regular.ttf') format('truetype');  
   }
 
   @font-face {
@@ -11,7 +12,8 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    src: url('../fonts/montserrat-v29-latin-500.woff2') format('woff2'); 
+    src: url('../fonts/montserrat-v29-latin-500.woff2') format('woff2'), 
+         url('../fonts/montserrat-v29-latin-500.ttf') format('truetype'); 
   }
 
   @font-face {
@@ -19,7 +21,8 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    src: url('../fonts/montserrat-v29-latin-600.woff2') format('woff2'); 
+    src: url('../fonts/montserrat-v29-latin-600.woff2') format('woff2'), 
+         url('../fonts/montserrat-v29-latin-600.ttf') format('truetype'); 
   }
 
   @font-face {
@@ -27,7 +30,8 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/montserrat-v29-latin-700.woff2') format('woff2'); 
+    src: url('../fonts/montserrat-v29-latin-700.woff2') format('woff2'),  
+         url('../fonts/montserrat-v29-latin-700.ttf') format('truetype'); 
   }
 
   @font-face {
@@ -35,7 +39,8 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 900;
-    src: url('../fonts/montserrat-v29-latin-900.woff2') format('woff2'); 
+    src: url('../fonts/montserrat-v29-latin-900.woff2') format('woff2'), 
+         url('../fonts/montserrat-v29-latin-900.ttf') format('truetype'); 
   }
 
   :root {
@@ -150,6 +155,10 @@ body {
     margin-bottom: 25px;
 }
 
+.hero-title-decor {
+    font-size: var(--font-size-heading-large-second);
+}
+
 .hero-description {
     width: 426px;
     font-weight: var(--font-weight-semibold);
@@ -233,6 +242,107 @@ body {
 }
 
 /* -- Advantages --*/
+
+.advantages-section {
+    padding: 85px 8px 85px 8px;
+    border: 1px solid white;
+}
+
+.advantages-title {
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: var(--font-size-heading-medium);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-tight);
+    text-transform: uppercase;
+}
+
+.advantages-list {
+    display: flex;
+    gap: 30px;
+}
+
+.advatages-item {
+    position: relative;
+    background-color: var(--color-bg-elements);
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px 12px 50px 12px;
+    width: 270px;
+    transition: background-color 0.3s ease;
+}
+
+.advatages-item:hover {
+    background-color: var(--color-accent-advantages);
+}
+
+.advatages-item::after,
+.advatages-item::before {
+    position: absolute;
+    transform: translate(-50%, 10px); 
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.advatages-item::after {
+    content: url(/images/icons/advantages-circle.svg);
+    top: 5%; 
+    left: 50%;
+}
+
+.advatages-item::before {
+    content: url(/images/icons/advantages-dot.svg);
+    top: 16%; 
+    left: 68%;
+}
+
+.advatages-item:hover::after,
+.advatages-item:hover::before {
+    opacity: 1;
+}
+
+.advantages-find>.advantages-circle {
+    background-image: url(/images/icons/advantages-icon-find-in-page.svg);
+    background-size: 69px;
+}
+
+.advantages-payment>.advantages-circle {
+    background-image: url(/images/icons/advantages-icon-money.svg);
+    background-size: 55px;
+}
+
+.advantages-world>.advantages-circle {
+    background-image: url(/images/icons/advantages-icon-world.svg);
+    background-size: 55px;
+}
+
+.advantages-home>.advantages-circle {
+    background-image: url(/images/icons/advantages-icon-home.svg);
+    background-size: 57px 56px;
+}
+
+.advantages-circle {
+    width: 99px;
+    height: 99px;    
+    background-color: var(--color-accent-advantages);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.advantages-subtitle {
+    margin-bottom: 20px;
+    font-size: var(--font-size-body-small);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-relaxed);
+}
+
+.advantages-description {
+    font-weight: var(--font-weight-medium);
+}
 
 /* -- Specializations --*/
 
